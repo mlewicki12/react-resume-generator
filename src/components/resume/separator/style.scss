@@ -1,0 +1,26 @@
+
+@media print {
+  .resume-separator {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    height: fit-content;
+
+    margin: 0.25rem;
+
+    > h2 {
+      margin: 0.25rem;
+    }
+
+    > .left, .right {
+      height: 3px;
+      border-bottom: 1px solid black;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+@media print {
+  .resume-header {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: space-between;
+
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+
+    > .resume-photo {
+      max-width: 3.5cm;
+      max-height: 3.5cm;
+
+      margin-right: 1cm;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 
-import React from 'react';
 import profile from './photo.jpg';
+import './style.scss';
 
 const ResumeHeader = () => {
   return (
