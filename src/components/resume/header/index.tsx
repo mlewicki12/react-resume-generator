@@ -1,22 +1,42 @@
 
-import profile from './photo.jpg';
 import './style.scss';
 
-const ResumeHeader = () => {
+type Header = {
+  name: string;
+  photo: string;
+  position: string;
+  
+  info: string[];
+}
+
+const ResumeHeader = ({
+  name, photo, position, info
+}: Header) => {
   return (
     <div className='resume-header'>
       <img
-        src={profile}
+        src={photo}
         className='resume-photo'
         alt='Profile'
       />
       <div className='resume-info'>
-        <div>
-          <h1 className='resume-header-name'>Maciej Lewicki</h1>
-          <p className='resume-header-location'>Warsaw, Poland 04-761</p>
+        <div className='resume-info-main'>
+            <h1 className='resume-header-name'>{name}</h1>
+            <h2 className='resume-header-position'>{position}</h2>
         </div>
-        <p className='resume-header-links'>+48 (534)-777-460 &bull; lewickimapl@gmail.com &bull; <br />
-          linkedin.com/in/maciej-lewicki &bull; github.com/mlewicki12 &bull; mlewicki.me</p>
+        <p className='resume-header-links'>
+          {info.map((item, index, array) => {
+            if(item === 'br') {
+              return (<br />);
+            }
+
+            if(index + 1 === array.length) {
+              return (<> {item} </>);
+            }
+
+            return <> {item} &bull; </>
+          })}
+        </p>
       </div>
     </div>
   );

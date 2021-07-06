@@ -1,0 +1,15 @@
+
+@media print {
+  .resume-extra {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    > p {
+      margin: 0;
+    }
+  }
+}

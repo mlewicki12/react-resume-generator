@@ -6,10 +6,18 @@ import ResumeJob from './job';
 import ResumeUni from './uni';
 import ResumeExtra from './extra';
 
+import profile from './photo.jpg';
+
 const Resume = () => {
   return (
     <div className='resume-root'>
-      <ResumeHeader />
+      <ResumeHeader 
+        name='Maciej Lewicki'
+        position='Software Developer'
+        photo={profile}
+
+        info={['Warsaw, Poland 04-761', '+48 (534) 777-460', 'lewickimapl@gmail.com', 'br', 'linkedin.com/in/maciej-lewicki', 'github.com/mlewicki12', 'mlewicki.me']}
+      />
 
       <div className='resume-body'>
         <ResumeSummary />

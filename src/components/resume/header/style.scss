@@ -17,13 +17,15 @@
       flex-flow: column nowrap;
       justify-content: space-between;
 
-      .resume-header-name {
-        margin: 0;
-      }
+      > .resume-info-main {
+        > .resume-header-name {
+          margin: 0;
+        }
 
-      .resume-header-location {
-        margin: 0;
-        margin-bottom: 1rem;
+        > .resume-header-position {
+          margin: 0;
+          font-size: 1rem;
+        }
       }
 
       > .resume-header-links {
