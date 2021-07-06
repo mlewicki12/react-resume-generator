@@ -12,15 +12,30 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
 
-    > .resume-info * {
-      margin: 0;
+    > .resume-info {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+      .resume-header-name {
+        margin: 0;
+      }
+
+      .resume-header-location {
+        margin: 0;
+        margin-bottom: 1rem;
+      }
+
+      > .resume-header-links {
+        margin: 0;
+      }
     }
 
     > .resume-photo {
       max-width: 3.5cm;
       max-height: 3.5cm;
 
-      margin-right: 1cm;
+      margin-right: 2rem;
     }
   }
 }

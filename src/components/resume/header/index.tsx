@@ -11,9 +11,12 @@ const ResumeHeader = () => {
         alt='Profile'
       />
       <div className='resume-info'>
-        <h1>Maciej Lewicki</h1>
-        <p>Warsaw, Poland 04-761</p>
-        <p>+48 (534)-777-460 &bull; lewickimapl@gmail.com &bull; github.com/mlewicki12 &bull; mlewicki.me</p>
+        <div>
+          <h1 className='resume-header-name'>Maciej Lewicki</h1>
+          <p className='resume-header-location'>Warsaw, Poland 04-761</p>
+        </div>
+        <p className='resume-header-links'>+48 (534)-777-460 &bull; lewickimapl@gmail.com &bull; <br />
+          linkedin.com/in/maciej-lewicki &bull; github.com/mlewicki12 &bull; mlewicki.me</p>
       </div>
     </div>
   );
