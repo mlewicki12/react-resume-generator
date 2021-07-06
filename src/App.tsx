@@ -1,9 +1,9 @@
 
-import Resume from './components/resume';
+import Router from './components/router';
 
 const App = () => {
   return (
-    <Resume />
+    <Router />
   );
 }
 
