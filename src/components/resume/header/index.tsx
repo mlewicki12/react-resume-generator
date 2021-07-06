@@ -8,6 +8,7 @@ const ResumeHeader = () => {
       <img
         src={profile}
         className='resume-photo'
+        alt='Profile'
       />
       <div className='resume-info'>
         <h1>Maciej Lewicki</h1>

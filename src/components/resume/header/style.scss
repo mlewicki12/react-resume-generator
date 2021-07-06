@@ -12,6 +12,10 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
 
+    > .resume-info * {
+      margin: 0;
+    }
+
     > .resume-photo {
       max-width: 3.5cm;
       max-height: 3.5cm;

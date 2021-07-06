@@ -1,0 +1,30 @@
+
+@media print {
+  .resume-uni {
+    width: 100%;
+
+    h3, h4, p {
+      margin: 0;
+    }
+
+    > .resume-uni-header {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      width: 100%;
+      margin-bottom: 0.75rem;
+
+      > .resume-uni-info {
+        display: flex;
+        flex-flow: column nowrap;
+
+        > .resume-uni-degree {
+          font-weight: normal;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
