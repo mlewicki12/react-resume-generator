@@ -4,6 +4,7 @@ import ResumeSummary from './summary';
 import ResumeSeparator from './separator';
 import ResumeJob from './job';
 import ResumeUni from './uni';
+import ResumeExtra from './extra';
 
 const Resume = () => {
   return (
@@ -39,9 +40,9 @@ const Resume = () => {
           end={['April 2020', 'April 2019']}
 
           responsibilities={[
-            'Develop and extend React web app for image generation client',
-            'Create a chrome extension to allow scraping texts and images from 3rd party websites',
-            'Implement REST API endpoints to customize image generation'
+            'Worked alongside experienced developers on software used by the world\'s biggest banks',
+            'Developed and styled a web interface using React to work with existing C# backend',
+            'Participated in meetings to plan out and estimate time required to implement features'
           ]}
         />
 
@@ -54,9 +55,9 @@ const Resume = () => {
           end='April 2020'
 
           responsibilities={[
-            'Develop and extend React web app for image generation client',
-            'Create a chrome extension to allow scraping texts and images from 3rd party websites',
-            'Implement REST API endpoints to customize image generation'
+            'Guided up to 4 student groups per term during development of their freshman design project',
+            'Researched many different technologies to best guide students',
+            'Ran labs introducing students to various programming concepts',
           ]}
         />
 
@@ -71,8 +72,24 @@ const Resume = () => {
           end='April 2020'
 
           gpa='3.53/4.00'
-          awards={['Founder\'s Scholarship', 'Dean\'s List (nov. 2017 -  apr. 2020)']}
+          awards={['Founder\'s Scholarship', 'Dean\'s List (Nov. 2017 -  Apr. 2020)']}
           extracurriculars={['WKDU Radio DJ', 'Drexel Esports and Gaming Society Game Director']}
+        />
+
+        <ResumeSeparator title='Other' />
+
+        <ResumeExtra
+          title='Philth Zine'
+          description='Music writer and stream organizer'
+          start='April 2020'
+          end='Present'
+        />
+
+        <ResumeExtra
+          title='Paper Boats'
+          description='Label owner and manager'
+          start='October 2020'
+          end='Present'
         />
       </div>
     </div>
@@ -81,4 +98,4 @@ const Resume = () => {
 
 export default Resume;
 export {ResumeHeader as Header, ResumeSummary as Summary, ResumeSeparator as Separator, ResumeJob as Job,
-  ResumeUni as Uni};
+  ResumeUni as Uni, ResumeExtra as Extra};
