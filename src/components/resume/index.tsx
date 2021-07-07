@@ -14,13 +14,17 @@ const Resume = () => {
       <ResumeHeader 
         name='Maciej Lewicki'
         position='Software Developer'
-        photo={profile}
+        profile={profile}
 
         info={['Warsaw, Poland 04-761', '+48 (534) 777-460', 'lewickimapl@gmail.com', 'br', 'linkedin.com/in/maciej-lewicki', 'github.com/mlewicki12', 'mlewicki.me']}
       />
 
       <div className='resume-body'>
-        <ResumeSummary />
+        <ResumeSummary
+          body={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ' +
+                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '}
+        />
 
         <ResumeSeparator title='Experience' />
 

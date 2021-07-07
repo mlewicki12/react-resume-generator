@@ -3,19 +3,19 @@ import './style.scss';
 
 type Header = {
   name: string;
-  photo: string;
+  profile: string;
   position: string;
   
   info: string[];
 }
 
 const ResumeHeader = ({
-  name, photo, position, info
+  name, profile, position, info
 }: Header) => {
   return (
     <div className='resume-header'>
       <img
-        src={photo}
+        src={profile}
         className='resume-photo'
         alt='Profile'
       />
