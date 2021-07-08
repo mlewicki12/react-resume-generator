@@ -1,6 +1,9 @@
 
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
-import Resume from '../resume';
+import ResumePage from '../../pages/resume';
+
+import definition from '../../definition.json';
+import { ResumeDefinition } from '../../types';
 
 const Router = () => {
   return (
@@ -10,7 +13,11 @@ const Router = () => {
           <Redirect to='/resume' />
         </Route>
 
-        <Route path='/resume' component={Resume} />
+        <Route path='/resume'>
+          <ResumePage
+            definition={definition}
+          />
+        </Route>
       </Switch>
     </BrowserRouter>
   )

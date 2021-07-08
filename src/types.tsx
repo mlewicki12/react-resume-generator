@@ -1,4 +1,18 @@
 
+export type ResumeDefinition = {
+  header: ResumeHeader;
+  body: ResumeComponent[];
+}
+
+export type ResumeHeader = {
+  name: string;
+  position: string;
+  profile: string;
+  separator: boolean;
+
+  info: string[];
+}
+
 export type ResumeComponent = {
   type: string;
 }
