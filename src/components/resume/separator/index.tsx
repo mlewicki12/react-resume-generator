@@ -1,23 +1,16 @@
 
+import { ReactLiquid } from 'react-liquid';
+
+import template from './template.js';
 import './style.scss';
 
 type Separator = {
   title?: string;
 };
 
-const ResumeSeparator = ({
-  title
-}: Separator) => {
+const ResumeSeparator = (separator: Separator) => {
   return (
-    <div className='resume-separator'>
-      <div className='border' />
-      {title &&
-        <>
-          <h2>{title}</h2>
-          <div className='border' />
-        </>
-      }
-    </div>
+    <ReactLiquid template={template} data={separator} html />
   );
 };
 

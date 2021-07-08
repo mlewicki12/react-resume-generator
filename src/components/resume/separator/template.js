@@ -1,0 +1,10 @@
+
+export default `
+<div class='resume-separator'>
+  <div class='border'></div>
+  {% if title %}
+    <h2>{{ title }}</h2>
+    <div class='border'></div>
+  {% endif %}
+</div>
+`;
