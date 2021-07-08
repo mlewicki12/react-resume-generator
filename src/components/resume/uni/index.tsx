@@ -10,7 +10,7 @@ type Uni = {
   end: string;
 
   gpa?: string;
-  relevantCoursework?: string[];
+  coursework?: string[];
   awards?: string[];
   extracurriculars?: string[];
 };
@@ -18,7 +18,7 @@ type Uni = {
 const ResumeUni = ({
   university, location, degree,
   start, end, gpa,
-  relevantCoursework, awards, extracurriculars
+  coursework, awards, extracurriculars
 }: Uni) => {
   return (
     <div className='resume-uni'>
@@ -33,8 +33,8 @@ const ResumeUni = ({
         <p><span style={{fontWeight: 'bold'}}>GPA:</span> {gpa}</p>
       )}
 
-      {relevantCoursework && (
-        <p><span style={{fontWeight: 'bold'}}>Relevant coursework:</span> {relevantCoursework.join(', ')}</p>
+      {coursework && (
+        <p><span style={{fontWeight: 'bold'}}>Relevant coursework:</span> {coursework.join(', ')}</p>
       )}
 
       {awards && (

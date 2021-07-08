@@ -5,15 +5,16 @@ type Header = {
   name: string;
   profile: string;
   position: string;
+  separator?: boolean;
   
   info: string[];
 }
 
 const ResumeHeader = ({
-  name, profile, position, info
+  name, profile, position, separator, info
 }: Header) => {
   return (
-    <div className='resume-header'>
+    <div className='resume-header' style={{borderBottom: separator ? '1px solid black' : undefined}}>
       <img
         src={profile}
         className='resume-photo'

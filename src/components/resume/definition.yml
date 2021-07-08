@@ -3,6 +3,7 @@ header:
   name: Maciej Lewicki
   position: Software Developer
   profile: photo.jpg
+  separator: false
   info:
     - Warsaw, Poland 04-761
     - +48 (534) 777-460
@@ -13,12 +14,6 @@ header:
     - mlewicki.me
 
 body:
-  - type: summary
-    body:
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-
   - type: separator
     title: Experience
 
@@ -59,34 +54,39 @@ body:
       - Researched many different technologies to best guide students
       - Ran labs introducing students to various programming concepts
 
-    - type: separator
-      title: Education
+  - type: separator
+    title: Education
 
-    - type: uni
-      university: Drexel University
-      location: Philadelphia, PA
-      degree: Completed coursework towards a BS in Computer Science
-      start: September 2017
-      end: April 2020
-      gpa: 3.53/4.00
-      awards:
-        - Founder's Scholarship
-        - Dean's List (Nov. 2017 - Apr. 2020)
-      extracurriculars:
-        - WKDU Radio DJ
-        - Drexel Esports and Gaming Society Game Director
+  - type: uni
+    university: Drexel University
+    location: Philadelphia, PA
+    degree: Completed coursework towards a BS in Computer Science
+    start: September 2017
+    end: April 2020
+    gpa: 3.53/4.00
+    awards:
+      - Founder's Scholarship
+      - Dean's List (Nov. 2017 - Apr. 2020)
+    extracurriculars:
+      - WKDU Radio DJ
+      - Drexel Esports and Gaming Society Game Director
 
-    - type: separator
-      title: Other
+  - type: separator
+    title: Other
 
-    - type: extra
-      title: Philth Zine
-      description: Music writer and stream organiser
-      start: April 2020
-      end: Present
+  - type: extra
+    title: Philth Zine
+    description: Music writer and stream organiser
+    start: April 2020
+    end: Present
 
-    - type: extra
-      title: Paper Boats
-      description: Label owner and manager
-      start: October 2020
-      end: Present
+  - type: extra
+    title: Paper Boats
+    description: Label owner and manager
+    start: October 2020
+    end: Present
+
+  - type: extra
+    title: Hedera21 - Hello Tokenization
+    description: Hackathon Community Award recipient
+    start: February 2021
