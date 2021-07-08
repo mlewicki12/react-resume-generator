@@ -1,17 +1,15 @@
 
-import React from 'react';
+import { ReactLiquid } from 'react-liquid';
+
+import template from './template.js';
 
 type Summary = {
   body: string;
 }
 
-const ResumeSummary = ({
-  body
-}: Summary) => {
+const ResumeSummary = (summary: Summary) => {
   return (
-    <p className='resume-summary'>
-      {body}
-    </p>
+    <ReactLiquid template={template} data={summary} html />
   );
 };
 
