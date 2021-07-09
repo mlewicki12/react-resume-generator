@@ -1,4 +1,7 @@
 
+import { ReactLiquid } from 'react-liquid';
+
+import template from './template.js';
 import './style.scss';
 
 type Uni = {
@@ -15,36 +18,9 @@ type Uni = {
   extracurriculars?: string[];
 };
 
-const ResumeUni = ({
-  university, location, degree,
-  start, end, gpa,
-  coursework, awards, extracurriculars
-}: Uni) => {
+const ResumeUni = (uni: Uni) => {
   return (
-    <div className='resume-uni'>
-      <div className='resume-uni-header'>
-        <div className='resume-uni-info'>
-          <h3>{university} / {location}</h3>
-          <h4 className='resume-uni-degree'>{degree}</h4>
-        </div>
-        <p>{start} - {end}</p>
-      </div>
-      {gpa && (
-        <p><span style={{fontWeight: 'bold'}}>GPA:</span> {gpa}</p>
-      )}
-
-      {coursework && (
-        <p><span style={{fontWeight: 'bold'}}>Relevant coursework:</span> {coursework.join(', ')}</p>
-      )}
-
-      {awards && (
-        <p><span style={{fontWeight: 'bold'}}>Awards & Honors:</span> {awards.join(', ')}</p>
-      )}
-
-      {extracurriculars && (
-        <p><span style={{fontWeight: 'bold'}}>Extracurricular activities:</span> {extracurriculars.join(', ')}</p>
-      )}
-    </div>
+    <ReactLiquid template={template} data={uni} html />
   );
 };
 
