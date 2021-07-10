@@ -1,43 +1,25 @@
 
-import ResumeHeader from './header';
-import ResumeSummary from './summary';
-import ResumeSeparator from './separator';
-import ResumeJob from './job';
-import ResumeUni from './uni';
-import ResumeExtra from './extra';
+import ResumeElement from '../resume-element';
+
+import { ResumeComponent } from '../../types';
+import useStylesheet from '../../hooks/stylesheet';
 
 type Resume = {
-  children: JSX.Element | JSX.Element[];
+  components: ResumeComponent[];
 }
 
 const Resume = ({
-  children
+  components
 }: Resume) => {
+  useStylesheet('style.css');
+
   return (
     <div className='resume-root'>
-      {children}
+      {components.map(component => (
+        <ResumeElement component={component} />
+      ))}
     </div>
-  );
+  )
 }
-
-const Body = ({
-  children
-}: Resume) => {
-  return (
-    <div className='resume-body'>
-      {children}
-    </div>
-  );
-}
-
-// pack everything onto resume component
-Resume.Header = ResumeHeader;
-Resume.Body = Body;
-
-Resume.Summary = ResumeSummary;
-Resume.Separator = ResumeSeparator;
-Resume.Job = ResumeJob;
-Resume.Uni = ResumeUni;
-Resume.Extra = ResumeExtra;
 
 export default Resume;

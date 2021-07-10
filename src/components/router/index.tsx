@@ -2,8 +2,8 @@
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import ResumePage from '../../pages/resume';
 
+import { ResumeComponent } from '../../types';
 import definition from '../../definition.json';
-import { ResumeDefinition } from '../../types';
 
 const Router = () => {
   return (
@@ -15,7 +15,7 @@ const Router = () => {
 
         <Route path='/resume'>
           <ResumePage
-            definition={definition}
+            definition={definition as ResumeComponent[]}
           />
         </Route>
       </Switch>

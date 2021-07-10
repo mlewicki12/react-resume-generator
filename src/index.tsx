@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import registerFilters from './liquid/filters';
 import reportWebVitals from './reportWebVitals';
+
+// add liquid filters
+registerFilters();
 
 ReactDOM.render(
   <React.StrictMode>

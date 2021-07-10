@@ -1,9 +1,4 @@
 
-export type ResumeDefinition = {
-  header: ResumeHeader;
-  body: ResumeComponent[];
-}
-
 export type ResumeHeader = {
   name: string;
   position: string;
@@ -13,8 +8,10 @@ export type ResumeHeader = {
   info: string[];
 }
 
+export type ResumeComponentType = 'extra' | 'header' | 'job' | 'uni' | 'separator' | 'summary' | 'uni';
+
 export type ResumeComponent = {
-  type: string;
+  type: ResumeComponentType;
 }
 
 export interface Separator extends ResumeComponent {

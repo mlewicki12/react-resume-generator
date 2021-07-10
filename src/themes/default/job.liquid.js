@@ -1,12 +1,13 @@
 
+export default `
 <div class='resume-job'>
   <div class='resume-job-header'>
     <div class='resume-job-company'>
       <h3>{{ company }} / {{ location }}</h3>
       <h4>{{ title }}</h4>
     </div>
-      {% capture array %}{{ start | array }}{% endcapture %}
-      {% if array == 'true' %}
+      {% capture start_type %}{{ start | type }}{% endcapture %}
+      {% if start_type == 'array' %}
         <p>
           {% for item in start %}
             {% assign index = forloop.index0 | plus: 0  %}
@@ -26,3 +27,4 @@
     {% endfor %}
   </ul>
 </div>
+`;

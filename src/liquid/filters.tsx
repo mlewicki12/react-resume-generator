@@ -1,11 +1,19 @@
 
 import { liquidEngine } from 'react-liquid';
 
-liquidEngine.registerFilter('array', (item: string | string[]) => {
-  if(Array.isArray(item)) {
-    console.log(`${item} is array!`);
-    return true;
-  }
+const registerFilters = () => {
+  console.log('registering liquid filters');
 
-  return false;
-});
+  // not great and needs futher implementation,
+  // but this will do for now
+  liquidEngine.registerFilter('type', (item: string | string[]) => {
+    if(Array.isArray(item)) {
+      return 'array';
+    }
+
+    return 'string';
+  });
+
+}
+
+export default registerFilters;
