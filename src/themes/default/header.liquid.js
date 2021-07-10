@@ -14,7 +14,10 @@ export default `
         {% if item == 'br' %}
           <br />
         {% else %}
-          {{ item }} &bull;
+          {{ item }}&nbsp;
+          {% unless forloop.last %}
+            &bull;
+          {% endunless %}
         {% endif %}
       {% endfor %}
     </p>
