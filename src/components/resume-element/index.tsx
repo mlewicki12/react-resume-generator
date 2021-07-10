@@ -1,5 +1,6 @@
 
 import { ReactLiquid } from 'react-liquid';
+import ReactHTMLParser from 'react-html-parser';
 import { ResumeComponent } from '../../types';
 
 import * as ResumeTemplate from '../../themes/default';
@@ -10,7 +11,6 @@ type ResumeElement = {
 };
 
 const getTemplate = (type: ResumeComponentType): string => {
-  console.log(`getting template for type ${type}`);
   switch(type) {
     case 'extra':
       return ResumeTemplate.Extra;
@@ -41,14 +41,14 @@ const getTemplate = (type: ResumeComponentType): string => {
 const ResumeElement = ({
   component
 }: ResumeElement) => {
-  console.log('hello there');
   return (
     <ReactLiquid
       template={getTemplate(component.type)}
       data={component}
-      render={(rendered: any) => (
-        <div style={{width: '100%'}} dangerouslySetInnerHTML={rendered} />
-      )} />
+      render={(rendered: any) => {
+        return ReactHTMLParser(rendered.__html);
+      }}
+    />
   );
 };
 
