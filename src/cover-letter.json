@@ -1,0 +1,32 @@
+{
+  "header": {
+    "type": "header",
+    "name": "Maciej Lewicki",
+    "position": "Software Developer",
+    "profile": "./photo.jpg",
+    "separator": true,
+    "info": [
+      "Warsaw, Poland 04-761",
+      "+48 (534) 777-460",
+      "lewickimapl@gmail.com",
+      "br",
+      "linkedin.com/in/maciej-lewicki",
+      "github.com/mlewicki12",
+      "mlewicki.me"
+    ]
+  },
+
+  "content": [
+    "Dear Kiko,",
+    "I'm writing to express my interest in working for your company, Softwax Record Pressing. As a professional web developer as well as someone involved with various aspects of music as a hobby, I think I would be a good fit for your company while bringing something new to the table as well.",
+    "Through my career so far as a web developer, I've gone from designing tiny websites as a hobby the way to creating and developing full-blown web applications. All the while my passion for music shined through in little projects scattered throughout - my two big favourites are an app that creates a playlist based on seed tracks and a set of parameters (currently unhosted) as well as a website that creates chord charts based on a provided tuning and set of desired notes (chords.mlewicki.me).",
+
+    "Music in general has infiltrated every facet of my life ever since starting college. Rooted in a simple appreciation for the art, it soon blossomed into attempts at every little thing to find a niche - recording little snippets and songs here and there, writing about my favourite records and pieces of music for Philth Zine, to spending a year hosting shows in my house in Philly and finally settling on running a mini tape label. Via Paper Boats, the goal has always been to promote artists I love and introduce them to a community who otherwise may not have heard of them, as well as provide people with unique pieces of art. My experience so far has been amazing, with 3 sold-out tape runs and great enjoyment of all aspects of the process - going from designing the cassette cover to printing and cutting out j-cards to dubbing each of the cassettes and listening back to them to finally putting little personal touches in each of the packages and shipping them out.",
+
+    "It seems to me like you and Softwax share a lot of my values, with a highlight on helping small artists who couldn't necessarily afford a record run and providing a more ethical alternative to major labels. Besides helping get the records out to customers itself, I would love to help out in any way I can and provide my skills to make the company even better than it already is.",
+
+    "I've attached my resume with further details about my education and career so far. Please don't hesitate to reach out with any and all questions, and I look forward to the opportunity to speak with you further. Thank you for your time and consideration.",
+    "Sincerely",
+    "Maciej Lewicki"
+  ]
+}

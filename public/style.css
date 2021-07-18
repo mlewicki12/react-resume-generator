@@ -1,5 +1,9 @@
 
 @media print {
+  .separator {
+    border-bottom: 1px solid black;
+  }
+
 	.resume-extra {
 		display: flex;
 		flex-flow: row nowrap;
