@@ -22,3 +22,5 @@ const createWindow = () => {
 }
 
 app.on('ready', createWindow);
+
+const server = require('../express/server');
