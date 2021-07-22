@@ -42,14 +42,8 @@ app.post('/upload', (req, res) => {
     templateObj.load().then(() => {
       const resumeObj = new Resume(path.join(__dirname, 'definition.json'));
       resumeObj.create(templateObj.templates)
-        .then(data => {
-          console.log('gay', data);
-          res.send(data);
-        })
-        .catch(err => {
-          console.log('faggot', err);
-          res.send(err)
-        });
+        .then(data => res.send(data))
+        .catch(err => res.send(err));
     });
   });
 });
