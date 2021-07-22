@@ -2,7 +2,9 @@
 const express = require('express');
 const fileupload = require('express-fileupload');
 const path = require('path');
-const adm_zip = require('adm-zip');
+
+const Template = require('./template.js');
+const Resume = require('./resume.js');
 
 const DEVELOPER = true;
 const TEMPLATES_DIR = 'templates';
@@ -34,21 +36,23 @@ app.post('/upload', (req, res) => {
     if (err)
       return res.status(500).send(err);
 
-    unzip(path.join(__dirname, TEMPLATES_DIR, `${template.name.slice(0, -3)}.rtx`), path.join(__dirname, TEMPLATES_DIR, `${template.name.slice(0, -3)}`));
-    res.send('File uploaded!');
+    const templatePath = path.join(__dirname, TEMPLATES_DIR, `${template.name.slice(0, -3)}`);
+
+    const templateObj = new Template(`${templatePath}.rtx`, templatePath);
+    templateObj.load().then(() => {
+      const resumeObj = new Resume(path.join(__dirname, 'definition.json'));
+      resumeObj.create(templateObj.templates)
+        .then(data => {
+          console.log('gay', data);
+          res.send(data);
+        })
+        .catch(err => {
+          console.log('faggot', err);
+          res.send(err)
+        });
+    });
   });
 });
-
-const unzip = (file, dest) => {
-  var zip = adm_zip(file);
-  var entries = zip.getEntries();
-
-  entries.forEach(entry => {
-    console.log(entry.toString());
-  });
-
-  zip.extractAllTo(dest);
-}
 
 const server = app.listen(port, () => {
   console.log(`listening on port ${server.address().port}`);
