@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = class Template {
-  components = [
+  componentNames = [
     'extra', 'header', 'job', 'separator', 'summary', 'uni'
   ]
 
@@ -17,8 +17,8 @@ module.exports = class Template {
   }
 
   load() {
-    this.templates = {};
-    const promises = this.components.map(component => new Promise((resolve, reject) => {
+    this.components = {};
+    const promises = this.componentNames.map(component => new Promise((resolve, reject) => {
       fs.readFile(path.join(this.path, `${component}.liquid`), 'utf8', (err, data) => {
         if(err) {
           reject(err);
@@ -30,7 +30,7 @@ module.exports = class Template {
 
     return Promise.all(promises).then(values => {
       values.forEach(value => {
-        this.templates[value.type] = value.data;
+        this.components[value.type] = value.data;
       });
     });
   }

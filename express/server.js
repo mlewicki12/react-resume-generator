@@ -2,12 +2,19 @@
 const express = require('express');
 const fileupload = require('express-fileupload');
 const path = require('path');
+const fs = require('fs');
 
 const Template = require('./template.js');
 const Resume = require('./resume.js');
 
 const DEVELOPER = true;
 const TEMPLATES_DIR = 'templates';
+
+// ensure resumes posting path exists on startup
+const resumesPath = path.join(__dirname, 'public', 'resumes');
+if(!fs.existsSync(resumesPath)) {
+  fs.mkdirSync(resumesPath);
+}
 
 const app = express();
 app.use(fileupload({
@@ -41,8 +48,8 @@ app.post('/upload', (req, res) => {
     const templateObj = new Template(`${templatePath}.rtx`, templatePath);
     templateObj.load().then(() => {
       const resumeObj = new Resume(path.join(__dirname, 'definition.json'));
-      resumeObj.create(templateObj.templates)
-        .then(data => res.send(data))
+      resumeObj.create(templateObj)
+        .then(data => res.redirect(`resumes/${data}`))
         .catch(err => res.send(err));
     });
   });

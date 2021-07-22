@@ -22,7 +22,7 @@ module.exports = class Resume {
     for(var i = 0; i < this.definition.length; ++i) {
       const component = this.definition[i];
 
-      const liquid = template[component.type];
+      const liquid = template.components[component.type];
 
       // can't do this all in one go bc variable names are reused
       this.render += await engine.parseAndRender(liquid, component);
@@ -31,6 +31,28 @@ module.exports = class Resume {
     this.render += '\n{% endblock %}';
     this.render = await engine.parseAndRender(this.render, {});
 
-    return this.render;
+    const folderName = `${Date.now()}`;
+    const folderPath = path.join(__dirname, 'public', 'resumes', folderName);
+    fs.mkdirSync(folderPath);
+
+    fs.copyFile(path.join(__dirname, 'photo.jpg'), path.join(folderPath, 'photo.jpg'), (err, data) => {
+      if(err) {
+        console.error(err);
+      }
+    });
+
+    fs.copyFile(path.join(template.path, 'style.css'), path.join(folderPath, 'style.css'), (err, data) => {
+      if(err) {
+        console.error(err);
+      }
+    });
+
+    fs.writeFile(path.join(folderPath, 'index.html'), this.render, (err, data) => {
+      if(err) {
+        console.error(err);
+      }
+    });
+
+    return folderName;
   }
 }
