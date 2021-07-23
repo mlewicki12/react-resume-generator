@@ -1,5 +1,6 @@
 
 const { Liquid } = require('liquidjs');
+const yaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
 
@@ -12,8 +13,12 @@ const engine = new Liquid({
 
 module.exports = class Resume {
   constructor(definition) {
-    var data = fs.readFileSync(definition, 'utf-8');
-    this.definition = JSON.parse(data);
+    try {
+      var data = fs.readFileSync(definition, 'utf-8');
+      this.definition = yaml.load(data);
+    } catch(e) {
+      console.error(e);
+    }
   }
 
   async create(template) {

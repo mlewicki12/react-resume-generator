@@ -47,7 +47,7 @@ app.post('/upload', (req, res) => {
 
     const templateObj = new Template(`${templatePath}.rtx`, templatePath);
     templateObj.load().then(() => {
-      const resumeObj = new Resume(path.join(__dirname, 'definition.json'));
+      const resumeObj = new Resume(path.join(__dirname, 'definition.yml'));
       resumeObj.create(templateObj)
         .then(data => res.redirect(`resumes/${data}`))
         .catch(err => res.send(err));
